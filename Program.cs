@@ -1,12 +1,19 @@
 ﻿using System;
 
-namespace RPG
+namespace RPG_Game
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                new Game().NewGame();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("An error occurred: " + exception);
+            }
         }
     }
 }
