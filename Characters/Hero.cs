@@ -6,13 +6,13 @@ namespace RPG_Game.Characters
     {
         public int ShieldPoints { get; private set; }
         public ISuperPower SuperPower { get; private set; }
-        private readonly SuperPower _superPowerObject;
+        private SuperPower _superPowerObject;
 
         public Hero(string name, int healthPoints, int attackPoints, ISuperPower superPower, int defencePoints, int shieldPoints) : base(name, healthPoints, attackPoints, defencePoints)
         {
             ShieldPoints = shieldPoints;
             SuperPower = superPower;
-            _superPowerObject = SuperPower.AttackWithSuperPower();
+            SetSuperPowerObject();
         }
 
         public void Defend(int attackPoints)
@@ -60,9 +60,15 @@ namespace RPG_Game.Characters
             return _superPowerObject.AttackPoints;
         }
 
+        private void SetSuperPowerObject()
+        {
+            _superPowerObject = SuperPower.AttackWithSuperPower();
+        }
+
         public void SetSuperPower(ISuperPower superPower)
         {
             SuperPower = superPower;
+            SetSuperPowerObject();
         }
     }
 }

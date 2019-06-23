@@ -84,6 +84,7 @@ namespace RPG_Game
             {
                 Console.WriteLine($"\nHero {hero.Name} is the winner!");
                 GetAwardForHero();
+                hero.GetHeroStatus();
             }
             else
             {
