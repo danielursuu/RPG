@@ -8,7 +8,9 @@ namespace RPG_Game
         {
             try
             {
-                new Game().NewGame();
+                Game game = new Game();
+
+                game.NewGame();
             }
             catch (Exception exception)
             {

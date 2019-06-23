@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RPG_Game
+﻿namespace RPG_Game
 {
     public class MagicPower : ISuperPower
     {

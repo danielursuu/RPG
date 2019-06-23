@@ -2,7 +2,6 @@
 using RPG_Game.Characters;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace RPG_Game
 {
@@ -25,11 +24,11 @@ namespace RPG_Game
             Enemies.Add(EnemyFactory.GetEnemy(EnemyType.Wolf));
         }
 
-        public List<Enemy> GetRandomEnemies (int numberOfEnemies)
+        public List<Enemy> GetRandomEnemies(int numberOfEnemies)
         {
             var random = new Random();
             List<Enemy> enemies = new List<Enemy>();
-            for(int i = 0; i < numberOfEnemies; i++)
+            for (int i = 0; i < numberOfEnemies; i++)
             {
                 int randomNumber = random.Next(0, Enemies.Count);
                 enemies.Add(Enemies[randomNumber]);

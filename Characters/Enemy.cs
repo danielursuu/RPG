@@ -1,5 +1,4 @@
-﻿
-using RPG_Game;
+﻿using RPG_Game;
 using RPG_Game.Characters;
 using System;
 
