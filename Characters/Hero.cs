@@ -21,16 +21,7 @@ namespace RPG_Game.Characters
 
             if (attackPoints > ShieldPoints)
             {
-                if (attackPoints > DefencePoints)
-                {
-                    HealthPoints -= attackPoints - DefencePoints;
-                    DefencePoints = 0;
-                }
-                else
-                {
-                    DefencePoints -= attackPoints - ShieldPoints;
-                }
-                ShieldPoints = 0;
+                ShieldIsPenetrated(attackPoints);
             }
             else
             {
@@ -38,6 +29,21 @@ namespace RPG_Game.Characters
             }
 
             GetHeroStatus();
+        }
+
+        private void ShieldIsPenetrated(int attackPoints)
+        {
+            if (attackPoints > DefencePoints + ShieldPoints)
+            {
+                HealthPoints -= attackPoints - DefencePoints;
+                DefencePoints = 0;
+            }
+            else
+            {
+                DefencePoints = ShieldPoints - attackPoints + DefencePoints;
+            }
+
+            ShieldPoints = 0;
         }
 
         public void GetHeroStatus()
